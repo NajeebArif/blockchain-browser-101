@@ -1,0 +1,6 @@
+{
+    "extends": "../../tsconsig.json",
+    "compilerOptions": {
+        "module": "commonjs"
+    }
+}
