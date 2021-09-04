@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/NajeebArif/blockchain-browser-101/issues"
   },
-  "homepage": "https://github.com/NajeebArif/blockchain-browser-101#readme"
+  "homepage": "https://github.com/NajeebArif/blockchain-browser-101#readme",
+  "devDependencies": {
+    "@types/node": "^16.7.10",
+    "copyfiles": "^2.4.1",
+    "serve": "^12.0.0",
+    "typescript": "^4.4.2"
+  }
 }
