@@ -11,9 +11,7 @@ enum Status {
 const amountEl = document.getElementById("amount") as HTMLInputElement;
 const blocksEl = document.getElementById("blocks") as HTMLDivElement;
 const confirmBtn = document.getElementById("confirm") as HTMLButtonElement;
-const pendingTransactionsEl = document.getElementById(
-  "pending-transactions"
-) as HTMLPreElement;
+const pendingTransactionsEl = document.getElementById("pendingtransactions") as HTMLPreElement;
 const recipientEl = document.getElementById("recipient") as HTMLInputElement;
 const senderEl = document.getElementById("sender") as HTMLInputElement;
 const statusEl = document.getElementById("status") as HTMLParagraphElement;
@@ -53,7 +51,7 @@ const transferBtn = document.getElementById("transfer") as HTMLButtonElement;
 
         // populate pending transactions and change status
         pendingTransactionsEl.textContent = blockchain.pendingTransactions
-            .map((t) => `${t.sender} • ${t.recipient}: $${t.amount}`)
+            .map((t) => `${t.sender} ➡ ${t.recipient}: $${t.amount}`)
             .join("\n");
         statusEl.textContent = Status.ReadyToMine;
 
@@ -93,7 +91,7 @@ function generateBlockHtml(block: Block, index: number) {
             <span class="block__index">#${index}</span>
             <span class="block__timestamp">${new Date(block.timestamp).toLocaleTimeString()}</span>
             <div class="prev-hash">
-                <div class="hash-title">• PREV HASH</div>
+                <div class="hash-title">⬅ PREV HASH</div>
                 <div class="hash-value">${block.previousHash}</div>
             </div>
             <div class="this-hash">
@@ -102,7 +100,7 @@ function generateBlockHtml(block: Block, index: number) {
             </div>
             <div class="block__transactions">
                 <div class="hash-title">TRANSACTIONS</div>
-                <pre class="transactionsvalue">${block.transactions.map((t) =>`${t.sender} •  ${t.recipient} - $${t.amount}`)}</pre>
+                <pre class="transactionsvalue">${block.transactions.map((t) =>`${t.sender} ➡  ${t.recipient} - $${t.amount}`)}</pre>
             </div>
         </div>
     `;
