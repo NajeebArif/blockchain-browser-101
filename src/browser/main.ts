@@ -1,4 +1,4 @@
-import { Blockchain, Block } from "../lib/bcTransactions";
+import { Blockchain, Block } from "../lib/bcTransactions.js";
 
 enum Status {
     Initialization = "⏳ Initializing the blockchain, creating the genesis block...",
@@ -22,6 +22,7 @@ const transferBtn = document.getElementById("transfer") as HTMLButtonElement;
 // Immediately invoked function to boot up the js.
 (async function main(): Promise<void> {
 
+    console.log('starting the function')
     // add event handlers
     transferBtn.addEventListener("click", addTransaction);
     confirmBtn.addEventListener("click", mineBlock);
