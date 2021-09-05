@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "serve",
+    "start": "npm run compileDeploy && serve",
     "compileDeploy": "tsc && npm run deploy",
     "deploy": "copyfiles -f src/browser/*.html src/browser/*.css dist"
   },
